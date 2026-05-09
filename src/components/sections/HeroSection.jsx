@@ -2,22 +2,24 @@ import { motion } from "framer-motion";
 import Container from "../common/Container";
 import PrimaryButton from "../ui/PrimaryButton";
 import GlassCard from "../ui/GlassCard";
+
 const HeroSection = () => {
   return (
-    <motion.section className="relative min-h-screen flex items-center overflow-hidden px-6 pt-40">
+    <motion.section className="relative min-h-screen flex items-center overflow-hidden px-4 md:px-6 pt-36 md:pt-40">
+
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-heroGradient" />
 
       {/* Purple Glow */}
       <motion.div
-            animate={{ opacity: [0.4, 0.7, 0.4] }}
-            transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            }}
-            className="absolute top-[-150px] left-[10%] w-[450px] h-[450px] bg-primary/30 blur-[160px] rounded-full"
-            />
+        animate={{ opacity: [0.4, 0.7, 0.4] }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-[-150px] left-[10%] w-[450px] h-[450px] bg-primary/30 blur-[160px] rounded-full"
+      />
 
       {/* Violet Glow */}
       <div className="absolute bottom-[-150px] right-[5%] w-[400px] h-[400px] bg-violetGlow/20 blur-[160px] rounded-full" />
@@ -27,106 +29,120 @@ const HeroSection = () => {
 
       {/* Main Content */}
       <Container className="relative z-10 w-full">
-        {/* LEFT CONTENT */}
-        <motion.div
-             initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-             className="space-y-8"
-             >
 
-          <div className="space-y-4">
-            <p className="uppercase tracking-[0.4em] text-sm text-textSecondary">
-              Luxury Jazz Fusion Experience
-            </p>
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-            <h1 className="font-heading text-6xl md:text-8xl xl:text-[9rem] leading-none font-bold">
-              JAZZ
-              <br />
-              MATAZZ
-            </h1>
-          </div>
-
-          <p className="max-w-xl text-lg md:text-xl text-textSecondary leading-relaxed">
-            A cinematic live-performance experience blending classic jazz,
-            fusion energy, and immersive stage presence.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-5">
-
-            <PrimaryButton>
-            Book Jazzmatazz
-            </PrimaryButton>
-
-            <button className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
-              Explore Shows
-            </button>
-
-          </div>
-
-        </motion.div>
-
-        {/* RIGHT VISUAL SIDE */}
-        <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-             animate={{ opacity: 1, scale: 1 }}
-             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-            className="relative h-[600px] hidden lg:flex items-center justify-center"
-            >
-          {/* Main Visual Card */}
+          {/* LEFT CONTENT */}
           <motion.div
-             animate={{ y: [0, -12, 0] }}
-              transition={{
-             duration: 6,
-             repeat: Infinity,
-              ease: "easeInOut",
-             }}
-             >
-              <GlassCard  className="relative w-[420px] h-[520px] rounded-[2rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-glow"
-                >
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="space-y-8"
+          >
 
-             {/* Image Placeholder */}
-             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-violetGlow/10" />
+            <div className="space-y-4">
 
-             {/* Glow Layer */}
-             <div className="absolute inset-0 bg-black/20" />
-
-             {/* Floating Accent */}
-             <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-sm tracking-wide">
-              LIVE EXPERIENCE
-             </div>
-
-             {/* Placeholder Text */}
-             <div className="absolute bottom-10 left-10">
-              <p className="text-textSecondary uppercase tracking-[0.3em] text-xs mb-3">
-                National Level Band
+              <p className="uppercase tracking-[0.4em] text-sm text-textSecondary">
+                Luxury Jazz Fusion Experience
               </p>
 
-              <h2 className="font-heading text-4xl font-bold">
-                Feel The
+              <h1 className="font-heading text-5xl sm:text-6xl md:text-8xl xl:text-[9rem] leading-[0.9] font-bold">
+                JAZZ
                 <br />
-                Performance
-              </h2>
-             </div>
-            </GlassCard>
-          </motion.div>
+                MATAZZ
+              </h1>
 
-          {/* Floating Mini Card */}
-          <div className="absolute bottom-12 left-0 w-[180px] h-[120px] rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl p-5 shadow-glow">
+            </div>
 
-            <p className="text-textSecondary text-xs uppercase tracking-[0.3em] mb-3">
-              Upcoming
+            <p className="max-w-xl text-base md:text-xl text-textSecondary leading-relaxed">
+              A cinematic live-performance experience blending classic jazz,
+              fusion energy, and immersive stage presence.
             </p>
 
-            <h3 className="font-heading text-xl font-bold">
-              Live Shows
-            </h3>
-          </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-5">
 
-        </motion.div>
+              <PrimaryButton>
+                Book Jazzmatazz
+              </PrimaryButton>
+
+              <button className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
+                Explore Shows
+              </button>
+
+            </div>
+
+          </motion.div>
+
+          {/* RIGHT VISUAL SIDE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+            className="relative h-[600px] hidden lg:flex items-center justify-center"
+          >
+
+            {/* Main Visual Card */}
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+
+              <GlassCard className="relative w-[420px] h-[520px] overflow-hidden">
+
+                {/* Image Placeholder */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-violetGlow/10" />
+
+                {/* Glow Layer */}
+                <div className="absolute inset-0 bg-black/20" />
+
+                {/* Floating Accent */}
+                <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-sm tracking-wide">
+                  LIVE EXPERIENCE
+                </div>
+
+                {/* Placeholder Text */}
+                <div className="absolute bottom-10 left-10">
+
+                  <p className="text-textSecondary uppercase tracking-[0.3em] text-xs mb-3">
+                    National Level Band
+                  </p>
+
+                  <h2 className="font-heading text-4xl font-bold">
+                    Feel The
+                    <br />
+                    Performance
+                  </h2>
+
+                </div>
+
+              </GlassCard>
+
+            </motion.div>
+
+            {/* Floating Mini Card */}
+            <div className="absolute bottom-12 left-0 w-[180px] h-[120px] rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl p-5 shadow-glow">
+
+              <p className="text-textSecondary text-xs uppercase tracking-[0.3em] mb-3">
+                Upcoming
+              </p>
+
+              <h3 className="font-heading text-xl font-bold">
+                Live Shows
+              </h3>
+
+            </div>
+
+          </motion.div>
+
+        </div>
 
       </Container>
+
     </motion.section>
   );
 };
