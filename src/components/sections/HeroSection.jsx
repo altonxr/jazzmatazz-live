@@ -4,8 +4,7 @@ import PrimaryButton from "../ui/PrimaryButton";
 import GlassCard from "../ui/GlassCard";
 const HeroSection = () => {
   return (
-    <motion.section className="relative min-h-screen flex items-center overflow-hidden px-6">
-
+    <motion.section className="relative min-h-screen flex items-center overflow-hidden px-6 pt-40">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-heroGradient" />
 
