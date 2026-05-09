@@ -1,10 +1,10 @@
+import MainLayout from "../../layouts/MainLayout";
+
 const About = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-6xl font-heading font-bold">
-        About Page
-      </h1>
-    </div>
+    <MainLayout>
+      {/* content */}
+    </MainLayout>
   );
 };
 
