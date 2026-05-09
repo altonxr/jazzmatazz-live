@@ -8,12 +8,12 @@ import galleryData from "../../data/galleryData";
 
 const GalleryPreview = () => {
   return (
-    <section className="relative py-36 overflow-hidden border-y border-white/[0.03]">
+    <section className="relative py-24 md:py-36 overflow-hidden border-y border-white/[0.03]">
 
       {/* Ambient Glow */}
       <div className="absolute right-[-100px] top-20 w-[450px] h-[450px] bg-primary/10 blur-[180px] rounded-full" />
 
-      <Container className="space-y-20">
+      <Container className="space-y-16 md:space-y-20">
 
         {/* Heading */}
         <SectionTitle
@@ -23,7 +23,7 @@ const GalleryPreview = () => {
         />
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 auto-rows-[220px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[220px] md:auto-rows-[260px]">
 
           {galleryData.map((item, index) => {
 
@@ -58,13 +58,13 @@ const GalleryPreview = () => {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 transition duration-700" />
 
                   {/* Content */}
-                  <div className="absolute bottom-8 left-8 z-10">
+                  <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 z-10">
 
                     <p className="uppercase tracking-[0.3em] text-xs text-textSecondary mb-3">
                       Live Gallery
                     </p>
 
-                    <h3 className="font-heading text-3xl md:text-4xl font-bold leading-tight">
+                    <h3 className="font-heading text-2xl md:text-4xl font-bold leading-tight">
                       {item.title}
                     </h3>
 

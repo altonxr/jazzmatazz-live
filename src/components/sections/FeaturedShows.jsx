@@ -13,7 +13,7 @@ const FeaturedShows = () => {
       {/* Ambient Glow */}
       <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-primary/10 blur-[180px] rounded-full" />
 
-      <Container className="space-y-20">
+      <Container className="space-y-16 md:space-y-20">
 
         {/* Section Heading */}
         <SectionTitle
@@ -23,7 +23,7 @@ const FeaturedShows = () => {
         />
 
         {/* Featured Layout */}
-        <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 lg:gap-10">
+        <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-6 md:gap-8 lg:gap-10">
 
           {/* Large Featured Card */}
           <motion.div
@@ -34,15 +34,17 @@ const FeaturedShows = () => {
           >
 
             <GlassCard className="relative min-h-[420px] md:min-h-[520px] overflow-hidden p-6 md:p-10 flex flex-col justify-between gap-10">
+
               {/* Background Layer */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-violetGlow/10" />
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/20" />
 
-              <div className="relative z-10 flex justify-between items-start">
+              <div className="relative z-10 flex flex-col sm:flex-row gap-6 sm:justify-between sm:items-start">
 
                 <div>
+
                   <p className="uppercase tracking-[0.3em] text-xs text-textSecondary mb-4">
                     Featured Performance
                   </p>
@@ -52,9 +54,10 @@ const FeaturedShows = () => {
                     <br />
                     Note Arena
                   </h3>
+
                 </div>
 
-                <div className="px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-xl text-sm">
+                <div className="w-fit px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-xl text-sm">
                   Mumbai
                 </div>
 
@@ -63,17 +66,19 @@ const FeaturedShows = () => {
               <div className="relative z-10 flex flex-col md:flex-row gap-8 md:items-end md:justify-between">
 
                 <div>
+
                   <p className="text-textSecondary mb-2">
                     May 24, 2026
                   </p>
 
-                  <p className="max-w-md text-textSecondary leading-relaxed">
+                  <p className="max-w-md text-sm md:text-base text-textSecondary leading-relaxed">
                     A cinematic live fusion performance blending classic jazz,
                     immersive lighting, and modern stage energy.
                   </p>
+
                 </div>
 
-                <button className="px-6 py-3 rounded-xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow">
+                <button className="w-fit px-6 py-3 rounded-xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow">
                   Explore Event
                 </button>
 
@@ -84,7 +89,7 @@ const FeaturedShows = () => {
           </motion.div>
 
           {/* Secondary Cards */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6 md:gap-8">
 
             {showsData.slice(1).map((show, index) => (
               <motion.div
@@ -99,24 +104,28 @@ const FeaturedShows = () => {
 
                   <div className="space-y-6">
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between gap-4">
+
                       <p className="uppercase tracking-[0.3em] text-xs text-textSecondary">
                         {show.type}
                       </p>
 
-                      <div className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-xs">
+                      <div className="px-3 py-1 rounded-full bg-white/10 border border-white/10 text-xs whitespace-nowrap">
                         {show.city}
                       </div>
+
                     </div>
 
                     <div>
+
                       <h4 className="font-heading text-2xl md:text-3xl font-bold mb-3">
                         {show.venue}
                       </h4>
 
-                      <p className="text-textSecondary">
+                      <p className="text-sm md:text-base text-textSecondary">
                         {show.date}
                       </p>
+
                     </div>
 
                   </div>

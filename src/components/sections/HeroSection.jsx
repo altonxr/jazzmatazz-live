@@ -5,7 +5,7 @@ import GlassCard from "../ui/GlassCard";
 
 const HeroSection = () => {
   return (
-    <motion.section className="relative min-h-screen flex items-center overflow-hidden px-4 md:px-6 pt-36 md:pt-40">
+    <motion.section className="relative min-h-screen flex items-center overflow-hidden px-4 md:px-6 pt-32 md:pt-40">
 
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-heroGradient" />
@@ -30,7 +30,7 @@ const HeroSection = () => {
       {/* Main Content */}
       <Container className="relative z-10 w-full">
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
@@ -42,11 +42,11 @@ const HeroSection = () => {
 
             <div className="space-y-4">
 
-              <p className="uppercase tracking-[0.4em] text-sm text-textSecondary">
+              <p className="uppercase tracking-[0.35em] text-xs md:text-sm text-textSecondary">
                 Luxury Jazz Fusion Experience
               </p>
 
-              <h1 className="font-heading text-5xl sm:text-6xl md:text-8xl xl:text-[9rem] leading-[0.9] font-bold">
+              <h1 className="font-heading text-5xl sm:text-6xl md:text-8xl xl:text-[9rem] leading-[0.88] font-bold">
                 JAZZ
                 <br />
                 MATAZZ
@@ -66,7 +66,7 @@ const HeroSection = () => {
                 Book Jazzmatazz
               </PrimaryButton>
 
-              <button className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
+              <button className="w-fit px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
                 Explore Shows
               </button>
 
@@ -92,7 +92,7 @@ const HeroSection = () => {
               }}
             >
 
-              <GlassCard className="relative w-[420px] h-[520px] overflow-hidden">
+              <GlassCard className="relative w-[380px] xl:w-[420px] h-[520px] overflow-hidden">
 
                 {/* Image Placeholder */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-violetGlow/10" />
@@ -112,7 +112,7 @@ const HeroSection = () => {
                     National Level Band
                   </p>
 
-                  <h2 className="font-heading text-4xl font-bold">
+                  <h2 className="font-heading text-3xl xl:text-4xl font-bold">
                     Feel The
                     <br />
                     Performance

@@ -6,7 +6,7 @@ import GlassCard from "../ui/GlassCard";
 
 const FinalCTA = () => {
   return (
-    <section className="relative py-44 overflow-hidden">
+    <section className="relative py-28 md:py-44 overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0B1120] to-background" />
@@ -22,7 +22,7 @@ const FinalCTA = () => {
           viewport={{ once: true }}
         >
 
-          <GlassCard className="relative overflow-hidden p-12 md:p-20 text-center">
+          <GlassCard className="relative overflow-hidden p-8 md:p-20 text-center">
 
             {/* Gradient Layer */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-violetGlow/10" />
@@ -31,15 +31,15 @@ const FinalCTA = () => {
             <div className="absolute inset-0 bg-black/20" />
 
             {/* Content */}
-            <div className="relative z-10 max-w-4xl mx-auto space-y-10">
+            <div className="relative z-10 max-w-4xl mx-auto space-y-8 md:space-y-10">
 
-              <div className="space-y-6">
+              <div className="space-y-5 md:space-y-6">
 
-                <p className="uppercase tracking-[0.4em] text-sm text-textSecondary">
+                <p className="uppercase tracking-[0.4em] text-xs md:text-sm text-textSecondary">
                   Book The Experience
                 </p>
 
-                <h2 className="font-heading text-5xl md:text-7xl xl:text-[6rem] leading-none font-bold">
+                <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl xl:text-[6rem] leading-[0.9] font-bold">
                   LET THE
                   <br />
                   MUSIC TAKE
@@ -49,12 +49,12 @@ const FinalCTA = () => {
 
               </div>
 
-              <p className="max-w-2xl mx-auto text-lg md:text-xl text-textSecondary leading-relaxed">
+              <p className="max-w-2xl mx-auto text-base md:text-xl text-textSecondary leading-relaxed">
                 Bring immersive jazz fusion energy, cinematic atmosphere, and
                 unforgettable live performance experiences to your next event.
               </p>
 
-              <div className="flex flex-wrap justify-center gap-6">
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-5 md:gap-6">
 
                 <PrimaryButton>
                   Book Jazzmatazz

@@ -5,7 +5,8 @@ import GlassCard from "../ui/GlassCard";
 
 const PerformanceExperience = () => {
   return (
-   <section className="relative min-h-screen flex items-center overflow-hidden py-44 border-y border-white/[0.03]">
+    <section className="relative min-h-screen flex items-center overflow-hidden py-28 md:py-44 border-y border-white/[0.03]">
+
       {/* Ambient Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0B1120] to-background" />
 
@@ -19,7 +20,7 @@ const PerformanceExperience = () => {
 
       <Container className="relative z-10">
 
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-24 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 md:gap-24 items-center">
 
           {/* LEFT SIDE */}
           <motion.div
@@ -36,7 +37,7 @@ const PerformanceExperience = () => {
                 The Experience
               </p>
 
-              <h2 className="font-heading text-5xl md:text-7xl xl:text-[8rem] leading-none font-bold">
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl xl:text-[8rem] leading-[0.9] font-bold">
                 FEEL
                 <br />
                 THE
@@ -46,7 +47,7 @@ const PerformanceExperience = () => {
 
             </div>
 
-            <p className="max-w-xl text-lg md:text-xl text-textSecondary leading-relaxed">
+            <p className="max-w-xl text-base md:text-xl text-textSecondary leading-relaxed">
               Jazzmatazz performances are designed as immersive experiences —
               blending cinematic lighting, live improvisation, emotional energy,
               and modern jazz fusion atmosphere into unforgettable nights.
@@ -60,7 +61,7 @@ const PerformanceExperience = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="relative h-[700px]"
+            className="relative h-[500px] md:h-[700px]"
           >
 
             {/* Main Large Card */}
@@ -76,7 +77,7 @@ const PerformanceExperience = () => {
                   Live Atmosphere
                 </p>
 
-                <h3 className="font-heading text-5xl font-bold leading-tight">
+                <h3 className="font-heading text-3xl md:text-5xl font-bold leading-tight">
                   Cinematic
                   <br />
                   Stage Presence
@@ -97,13 +98,13 @@ const PerformanceExperience = () => {
               className="absolute bottom-0 left-0"
             >
 
-              <GlassCard className="w-[300px] p-8">
+              <GlassCard className="w-[240px] md:w-[300px] p-6 md:p-8">
 
                 <p className="uppercase tracking-[0.3em] text-xs text-textSecondary mb-4">
                   Fusion Energy
                 </p>
 
-                <h4 className="font-heading text-4xl font-bold mb-5">
+                <h4 className="font-heading text-3xl md:text-4xl font-bold mb-5">
                   Jazz.
                   <br />
                   Motion.
@@ -140,6 +141,7 @@ const PerformanceExperience = () => {
         </div>
 
       </Container>
+
     </section>
   );
 };
