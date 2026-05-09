@@ -4,6 +4,7 @@ import FeaturedShows from "../../components/sections/FeaturedShows";
 import AboutPreview from "../../components/sections/AboutPreview";
 import PerformanceExperience from "../../components/sections/PerformanceExperience";
 import GalleryPreview from "../../components/sections/GalleryPreview";
+import MembersPreview from "../../components/sections/MembersPreview";
 const Home = () => {
   return (
     <MainLayout>
@@ -12,6 +13,7 @@ const Home = () => {
       <AboutPreview/>
       <PerformanceExperience/>
       <GalleryPreview/>    
+      <MembersPreview/>
     
     </MainLayout>
 
