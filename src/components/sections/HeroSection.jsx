@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import Container from "../common/Container";
+import PrimaryButton from "../ui/PrimaryButton";
+import GlassCard from "../ui/GlassCard";
 const HeroSection = () => {
   return (
     <motion.section className="relative min-h-screen flex items-center overflow-hidden px-6">
@@ -24,8 +27,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-container mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
-
+      <Container className="relative z-10 w-full">
         {/* LEFT CONTENT */}
         <motion.div
              initial={{ opacity: 0, y: 40 }}
@@ -54,9 +56,9 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-5">
 
-            <button className="px-8 py-4 rounded-2xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow font-medium">
-              Book Jazzmatazz
-            </button>
+            <PrimaryButton>
+            Book Jazzmatazz
+            </PrimaryButton>
 
             <button className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
               Explore Shows
@@ -81,7 +83,8 @@ const HeroSection = () => {
              repeat: Infinity,
               ease: "easeInOut",
              }}
-                className="relative w-[420px] h-[520px] rounded-[2rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-glow"
+             >
+              <GlassCard  className="relative w-[420px] h-[520px] rounded-[2rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-glow"
                 >
 
              {/* Image Placeholder */}
@@ -107,7 +110,7 @@ const HeroSection = () => {
                 Performance
               </h2>
              </div>
-
+            </GlassCard>
           </motion.div>
 
           {/* Floating Mini Card */}
@@ -124,7 +127,7 @@ const HeroSection = () => {
 
         </motion.div>
 
-      </div>
+      </Container>
     </motion.section>
   );
 };
