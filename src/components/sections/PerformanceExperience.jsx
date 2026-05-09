@@ -5,8 +5,7 @@ import GlassCard from "../ui/GlassCard";
 
 const PerformanceExperience = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden py-36">
-
+   <section className="relative min-h-screen flex items-center overflow-hidden py-44 border-y border-white/[0.03]">
       {/* Ambient Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0B1120] to-background" />
 

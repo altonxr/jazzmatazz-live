@@ -8,7 +8,7 @@ import membersData from "../../data/membersData";
 
 const MembersPreview = () => {
   return (
-    <section className="relative py-36 overflow-hidden">
+    <section className="relative py-40 overflow-hidden border-y border-white/[0.03]">
 
       {/* Ambient Glow */}
       <div className="absolute left-[-120px] bottom-0 w-[400px] h-[400px] bg-violetGlow/10 blur-[180px] rounded-full" />

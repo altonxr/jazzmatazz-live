@@ -8,7 +8,7 @@ import galleryData from "../../data/galleryData";
 
 const GalleryPreview = () => {
   return (
-    <section className="relative py-36 overflow-hidden">
+    <section className="relative py-36 overflow-hidden border-y border-white/[0.03]">
 
       {/* Ambient Glow */}
       <div className="absolute right-[-100px] top-20 w-[450px] h-[450px] bg-primary/10 blur-[180px] rounded-full" />

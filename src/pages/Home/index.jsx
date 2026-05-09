@@ -5,6 +5,8 @@ import AboutPreview from "../../components/sections/AboutPreview";
 import PerformanceExperience from "../../components/sections/PerformanceExperience";
 import GalleryPreview from "../../components/sections/GalleryPreview";
 import MembersPreview from "../../components/sections/MembersPreview";
+import FinalCTA from "../../components/sections/FinalCTA";
+
 const Home = () => {
   return (
     <MainLayout>
@@ -14,6 +16,7 @@ const Home = () => {
       <PerformanceExperience/>
       <GalleryPreview/>    
       <MembersPreview/>
+      <FinalCTA />
     
     </MainLayout>
 
