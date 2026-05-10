@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "../ui/Logo";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -21,9 +22,7 @@ const Navbar = () => {
       <nav className="max-w-container mx-auto backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl px-6 md:px-8 py-4 flex items-center justify-between shadow-glow">
 
         {/* Logo */}
-        <div className="text-xl md:text-2xl font-heading font-bold tracking-wide">
-          JAZZMATAZZ
-        </div>
+        <Logo />
 
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-8">
@@ -77,9 +76,7 @@ const Navbar = () => {
           {/* Top Bar */}
           <div className="flex items-center justify-between px-6 py-6 border-b border-white/10">
 
-            <h2 className="font-heading text-2xl font-bold">
-              JAZZMATAZZ
-            </h2>
+            <Logo />
 
             <button
               onClick={() => setIsOpen(false)}

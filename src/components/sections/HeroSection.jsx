@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import Container from "../common/Container";
 import PrimaryButton from "../ui/PrimaryButton";
 import GlassCard from "../ui/GlassCard";
-
+import HeroLogo from "../ui/HeroLogo";
+import AmbientParticles from "../ui/AmbientParticles";
+import heroBand from "../../assets/images/hero/hero-band.png";
 const HeroSection = () => {
   return (
     <motion.section className="relative min-h-screen flex items-center overflow-hidden px-4 md:px-6 pt-32 md:pt-40">
@@ -26,7 +28,7 @@ const HeroSection = () => {
 
       {/* Grid Overlay */}
       <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
-
+      <AmbientParticles />
       {/* Main Content */}
       <Container className="relative z-10 w-full">
 
@@ -46,11 +48,7 @@ const HeroSection = () => {
                 Luxury Jazz Fusion Experience
               </p>
 
-              <h1 className="font-heading text-5xl sm:text-6xl md:text-8xl xl:text-[9rem] leading-[0.88] font-bold">
-                JAZZ
-                <br />
-                MATAZZ
-              </h1>
+             <HeroLogo />
 
             </div>
 
@@ -94,16 +92,25 @@ const HeroSection = () => {
 
               <GlassCard className="relative w-[380px] xl:w-[420px] h-[520px] overflow-hidden">
 
-                {/* Image Placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-violetGlow/10" />
+                {/* Hero Image */}
+                <img
+                  src={heroBand}
+                  alt="Jazzmatazz Live Performance"
+                  className="absolute inset-0 w-full h-full object-cover grayscale brightness-110 contrast-110"
+                    />
 
+                    {/* Dark Overlay */}
+                    <div className="absolute inset-0 bg-black/15" />
+
+                      {/* Gradient Atmosphere */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+
+                      {/* Purple Ambient Glow */}
+                      <div className="absolute inset-0 bg-primary/10 mix-blend-screen" />
                 {/* Glow Layer */}
                 <div className="absolute inset-0 bg-black/20" />
 
-                {/* Floating Accent */}
-                <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-lg border border-white/10 text-sm tracking-wide">
-                  LIVE EXPERIENCE
-                </div>
+            
 
                 {/* Placeholder Text */}
                 <div className="absolute bottom-10 left-10">
@@ -113,9 +120,7 @@ const HeroSection = () => {
                   </p>
 
                   <h2 className="font-heading text-3xl xl:text-4xl font-bold">
-                    Feel The
-                    <br />
-                    Performance
+                    EST. GOA
                   </h2>
 
                 </div>
@@ -124,18 +129,11 @@ const HeroSection = () => {
 
             </motion.div>
 
-            {/* Floating Mini Card */}
-            <div className="absolute bottom-12 left-0 w-[180px] h-[120px] rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl p-5 shadow-glow">
+           
 
-              <p className="text-textSecondary text-xs uppercase tracking-[0.3em] mb-3">
-                Upcoming
-              </p>
+            
 
-              <h3 className="font-heading text-xl font-bold">
-                Live Shows
-              </h3>
-
-            </div>
+            
 
           </motion.div>
 

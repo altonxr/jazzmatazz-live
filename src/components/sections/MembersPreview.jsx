@@ -8,7 +8,7 @@ import membersData from "../../data/membersData";
 
 const MembersPreview = () => {
   return (
-    <section className="relative py-28 md:py-40 overflow-hidden border-y border-white/[0.03]">
+    <section className="relative py-28 md:py-40 overflow-hidden">
 
       {/* Ambient Glow */}
       <div className="absolute left-[-120px] bottom-0 w-[400px] h-[400px] bg-violetGlow/10 blur-[180px] rounded-full" />
@@ -37,7 +37,7 @@ const MembersPreview = () => {
               viewport={{ once: true }}
             >
 
-              <GlassCard className="relative overflow-hidden p-6 md:p-8 min-h-[380px] md:min-h-[420px] group transition duration-500 hover:-translate-y-2">
+              <GlassCard className="relative overflow-hidden p-4 md:p-5 min-h-[380px] md:min-h-[420px] group transition duration-500 hover:-translate-y-2">
 
                 {/* Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-violetGlow/10 opacity-70 group-hover:opacity-100 transition duration-700" />
@@ -46,7 +46,7 @@ const MembersPreview = () => {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 transition duration-700" />
 
                 {/* Placeholder Visual */}
-                <div className="relative z-10 w-full h-[200px] md:h-[220px] rounded-[1.5rem] bg-white/5 border border-white/10 mb-8 overflow-hidden">
+                <div className="relative z-10 w-full h-[240px] md:h-[260px] rounded-[1.25rem] bg-gradient-to-br from-white/[0.06] to-white/[0.02] mb-5 overflow-hidden">
 
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-violetGlow/10" />
 
