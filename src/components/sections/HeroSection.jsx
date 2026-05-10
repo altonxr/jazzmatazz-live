@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-
+import {
+  fadeLeft,
+  fadeRight,
+  cinematicReveal,
+  slowFloat,
+} from "../../utils/animations"
 import Container from "../common/Container";
 import PrimaryButton from "../ui/PrimaryButton";
 import GlassCard from "../ui/GlassCard";
@@ -42,9 +47,9 @@ const HeroSection = () => {
 
           {/* LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            variants={fadeLeft}
+            initial="hidden"
+            animate="visible"
             className="space-y-8"
           >
 
@@ -82,20 +87,15 @@ const HeroSection = () => {
 
           {/* RIGHT VISUAL SIDE */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+            variants={fadeRight}
+            initial="hidden"
+            animate="visible"
             className="relative flex items-center justify-center"
           >
 
             {/* Floating Animation */}
             <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              {...slowFloat}
               className="w-full flex justify-center"
             >
 

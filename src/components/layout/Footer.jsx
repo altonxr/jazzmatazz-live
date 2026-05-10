@@ -5,7 +5,7 @@ import Container from "../common/Container";
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden pt-24 pb-12">
-
+<div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent pointer-events-none z-10" />
       {/* Ambient Glow */}
       <div className="absolute left-1/2 bottom-[-120px] -translate-x-1/2 w-[700px] h-[350px] bg-primary/10 blur-[180px] rounded-full" />
 

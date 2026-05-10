@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 
+import {
+  fadeLeft,
+  fadeScale,
+  slowFloat,
+} from "../../utils/animations";
+
 import Container from "../common/Container";
-import GlassCard from "../ui/GlassCard";
 
 const PerformanceExperience = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden py-28 md:py-44 border-y border-white/[0.03]">
+    <section className="relative min-h-screen flex items-center overflow-hidden py-28 md:py-44">
 
       {/* Ambient Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0B1120] to-background" />
@@ -24,9 +29,9 @@ const PerformanceExperience = () => {
 
           {/* LEFT SIDE */}
           <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
             className="space-y-10"
           >
@@ -57,27 +62,77 @@ const PerformanceExperience = () => {
 
           {/* RIGHT SIDE */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            variants={fadeScale}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            className="relative h-[500px] md:h-[700px]"
+            className="relative h-[520px] md:h-[620px]"
           >
 
-            {/* Main Large Card */}
-            <GlassCard className="absolute top-0 right-0 w-[85%] h-[420px] overflow-hidden">
+            {/* Massive Cinematic Glass Structure */}
+            <div className="absolute inset-y-[6%] left-[4%] right-[4%] rounded-[3rem] overflow-hidden border border-white/[0.05] bg-gradient-to-br from-white/[0.02] to-transparent backdrop-blur-sm">
 
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-violetGlow/10" />
+              {/* Atmosphere */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-violetGlow/10" />
 
-              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-black/20" />
 
-              <div className="absolute bottom-10 left-10 z-10 max-w-sm">
+              {/* Vertical Stage Lines */}
+              <div className="absolute inset-0 opacity-[0.05]">
+                <div className="absolute left-[18%] top-0 w-px h-full bg-white" />
+                <div className="absolute left-[50%] top-0 w-px h-full bg-white" />
+                <div className="absolute left-[82%] top-0 w-px h-full bg-white" />
+              </div>
+
+              {/* Horizontal Divider */}
+              <div className="absolute top-[18%] left-[10%] w-[68%] h-px bg-gradient-to-r from-white/10 to-transparent" />
+
+              {/* Top Metadata */}
+              <div className="absolute top-[22%] left-[10%] z-10">
+
+                <p className="uppercase tracking-[0.35em] text-[10px] text-textMuted mb-3">
+                  Live Session
+                </p>
+
+                <p className="text-sm text-white/40">
+                  Goa · India
+                </p>
+
+              </div>
+
+              {/* Massive Background Typography */}
+              <h2 className="absolute bottom-[2%] left-[6%] text-[9rem] md:text-[13rem] font-bold leading-none text-white/[0.02] select-none">
+                LIVE
+              </h2>
+
+              {/* Ambient Musical Notes */}
+              <div className="absolute top-[8%] right-[8%] text-[220px] text-white/[0.02] leading-none rotate-12">
+                ♫
+              </div>
+
+              <div className="absolute bottom-[18%] right-[18%] text-[120px] text-primary/[0.05] leading-none -rotate-12">
+                ♪
+              </div>
+
+              {/* Floating Light */}
+              <motion.div
+                {...slowFloat}
+                className="absolute top-[34%] right-[14%] w-[140px] h-[140px] rounded-full border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl"
+              >
+                <div className="absolute inset-[28px] rounded-full border border-primary/40" />
+              </motion.div>
+
+              {/* Bottom Glow */}
+              <div className="absolute bottom-[-80px] right-[5%] w-[280px] h-[280px] rounded-full bg-primary/10 blur-[120px]" />
+
+              {/* Main Content */}
+              <div className="absolute bottom-[12%] left-[10%] z-10 max-w-md">
 
                 <p className="uppercase tracking-[0.3em] text-xs text-textSecondary mb-4">
                   Live Atmosphere
                 </p>
 
-                <h3 className="font-heading text-3xl md:text-5xl font-bold leading-tight">
+                <h3 className="font-heading text-4xl md:text-6xl font-bold leading-[0.95]">
                   Cinematic
                   <br />
                   Stage Presence
@@ -85,56 +140,7 @@ const PerformanceExperience = () => {
 
               </div>
 
-            </GlassCard>
-
-            {/* Floating Small Card */}
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute bottom-0 left-0"
-            >
-
-              <GlassCard className="w-[240px] md:w-[300px] p-6 md:p-8">
-
-                <p className="uppercase tracking-[0.3em] text-xs text-textSecondary mb-4">
-                  Fusion Energy
-                </p>
-
-                <h4 className="font-heading text-3xl md:text-4xl font-bold mb-5">
-                  Jazz.
-                  <br />
-                  Motion.
-                  <br />
-                  Atmosphere.
-                </h4>
-
-                <p className="text-textSecondary leading-relaxed">
-                  Every performance blends timeless jazz roots with modern live
-                  production and immersive audience energy.
-                </p>
-
-              </GlassCard>
-
-            </motion.div>
-
-            {/* Floating Accent */}
-            <motion.div
-              animate={{ rotate: [0, 3, 0] }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute top-[45%] left-[20%] w-[140px] h-[140px] rounded-full border border-white/10 bg-white/5 backdrop-blur-xl flex items-center justify-center"
-            >
-
-              <div className="w-16 h-16 rounded-full border border-primary/40" />
-
-            </motion.div>
+            </div>
 
           </motion.div>
 

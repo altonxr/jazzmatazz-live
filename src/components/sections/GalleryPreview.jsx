@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 
+import {
+  fadeScale,
+  staggerContainer,
+} from "../../utils/animations";
+
 import Container from "../common/Container";
 import SectionTitle from "../common/SectionTitle";
 import GlassCard from "../ui/GlassCard";
@@ -19,7 +24,7 @@ const galleryImages = [
 const GalleryPreview = () => {
   return (
     <section className="relative py-24 md:py-36 overflow-hidden">
-
+<div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent pointer-events-none z-10" />
       {/* Ambient Glow */}
       <div className="absolute right-[-100px] top-20 w-[450px] h-[450px] bg-primary/10 blur-[180px] rounded-full" />
 
@@ -33,7 +38,13 @@ const GalleryPreview = () => {
         />
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[220px] md:auto-rows-[260px]">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[220px] md:auto-rows-[260px]"
+        >
 
           {galleryData.slice(0, 3).map((item, index) => {
 
@@ -46,13 +57,7 @@ const GalleryPreview = () => {
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.12,
-                }}
-                viewport={{ once: true }}
+                variants={fadeScale}
                 className={sizeClasses[item.size]}
               >
 
@@ -84,7 +89,7 @@ const GalleryPreview = () => {
                     <h3 className="font-heading text-2xl md:text-4xl font-bold leading-tight">
                       {item.title}
                     </h3>
-
+<div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
                   </div>
 
                 </GlassCard>
@@ -93,7 +98,7 @@ const GalleryPreview = () => {
             );
           })}
 
-        </div>
+        </motion.div>
 
       </Container>
     </section>

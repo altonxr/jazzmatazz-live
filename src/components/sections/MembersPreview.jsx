@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 
+import {
+  fadeScale,
+  staggerContainer,
+} from "../../utils/animations";
+
 import Container from "../common/Container";
 import SectionTitle from "../common/SectionTitle";
 import GlassCard from "../ui/GlassCard";
@@ -38,7 +43,7 @@ const members = [
 const MembersPreview = () => {
   return (
     <section className="relative py-28 md:py-40 overflow-hidden">
-
+<div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent pointer-events-none z-10" />
       {/* Ambient Glow */}
       <div className="absolute left-[-120px] bottom-0 w-[400px] h-[400px] bg-violetGlow/10 blur-[180px] rounded-full" />
 
@@ -52,18 +57,18 @@ const MembersPreview = () => {
         />
 
         {/* Members Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8"
+        >
 
-          {members.map((member, index) => (
+          {members.map((member) => (
             <motion.div
               key={member.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.12,
-              }}
-              viewport={{ once: true }}
+              variants={fadeScale}
             >
 
               <GlassCard className="relative overflow-hidden min-h-[500px] group transition duration-500 hover:-translate-y-2">
@@ -105,7 +110,7 @@ const MembersPreview = () => {
                   <p className="text-textSecondary leading-relaxed text-sm md:text-base">
                     {member.description}
                   </p>
-
+<div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
                 </div>
 
               </GlassCard>
@@ -113,7 +118,7 @@ const MembersPreview = () => {
             </motion.div>
           ))}
 
-        </div>
+        </motion.div>
 
       </Container>
     </section>
