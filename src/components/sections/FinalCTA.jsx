@@ -2,16 +2,17 @@ import { motion } from "framer-motion";
 
 import Container from "../common/Container";
 import PrimaryButton from "../ui/PrimaryButton";
-import GlassCard from "../ui/GlassCard";
 
 const FinalCTA = () => {
   return (
     <section className="relative py-28 md:py-44 overflow-hidden">
 
-      {/* Background Glow */}
+      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0B1120] to-background" />
 
+      {/* Ambient Glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/10 blur-[220px] rounded-full" />
+
 
       <Container className="relative z-10">
 
@@ -22,13 +23,10 @@ const FinalCTA = () => {
           viewport={{ once: true }}
         >
 
-          <GlassCard className="relative overflow-hidden p-8 md:p-20 text-center">
+          <div className="relative overflow-hidden py-24 md:py-36 text-center">
 
-            {/* Gradient Layer */}
+            {/* Atmospheric Gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-violetGlow/10" />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/20" />
 
             {/* Content */}
             <div className="relative z-10 max-w-4xl mx-auto space-y-8 md:space-y-10">
@@ -68,7 +66,7 @@ const FinalCTA = () => {
 
             </div>
 
-          </GlassCard>
+          </div>
 
         </motion.div>
 

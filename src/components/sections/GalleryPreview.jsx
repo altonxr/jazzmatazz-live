@@ -6,9 +6,19 @@ import GlassCard from "../ui/GlassCard";
 
 import galleryData from "../../data/galleryData";
 
+import gallery1 from "../../assets/images/gallery/gallery-1.png";
+import gallery2 from "../../assets/images/gallery/gallery-2.png";
+import gallery3 from "../../assets/images/gallery/gallery-3.png";
+
+const galleryImages = [
+  gallery1,
+  gallery2,
+  gallery3,
+];
+
 const GalleryPreview = () => {
   return (
-    <section className="relative py-24 md:py-36 overflow-hidden border-y border-white/[0.03]">
+    <section className="relative py-24 md:py-36 overflow-hidden">
 
       {/* Ambient Glow */}
       <div className="absolute right-[-100px] top-20 w-[450px] h-[450px] bg-primary/10 blur-[180px] rounded-full" />
@@ -25,7 +35,7 @@ const GalleryPreview = () => {
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[220px] md:auto-rows-[260px]">
 
-          {galleryData.map((item, index) => {
+          {galleryData.slice(0, 3).map((item, index) => {
 
             const sizeClasses = {
               large: "lg:col-span-7 lg:row-span-2",
@@ -48,14 +58,21 @@ const GalleryPreview = () => {
 
                 <GlassCard className="relative h-full overflow-hidden group cursor-pointer">
 
-                  {/* Background Visual */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-violetGlow/10 transition duration-700 group-hover:scale-105" />
+                  {/* Gallery Image */}
+                  <img
+                    src={galleryImages[index]}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-contain bg-black transition duration-700 group-hover:scale-105"
+                  />
 
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition duration-500" />
+                  {/* Dark Cinematic Overlay */}
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition duration-500" />
 
-                  {/* Glow Overlay */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-primary/10 transition duration-700" />
+                  {/* Bottom Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-black/10 to-transparent" />
+
+                  {/* Purple Atmosphere */}
+                  <div className="absolute inset-0 bg-primary/10 mix-blend-screen opacity-60" />
 
                   {/* Content */}
                   <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 z-10">

@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+
 import Container from "../common/Container";
 import PrimaryButton from "../ui/PrimaryButton";
 import GlassCard from "../ui/GlassCard";
 import HeroLogo from "../ui/HeroLogo";
 import AmbientParticles from "../ui/AmbientParticles";
+
 import heroBand from "../../assets/images/hero/hero-band.png";
+
 const HeroSection = () => {
   return (
     <motion.section className="relative min-h-screen flex items-center overflow-hidden px-4 md:px-6 pt-32 md:pt-40">
@@ -28,11 +31,14 @@ const HeroSection = () => {
 
       {/* Grid Overlay */}
       <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
+
+      {/* Ambient Particles */}
       <AmbientParticles />
+
       {/* Main Content */}
       <Container className="relative z-10 w-full">
 
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
@@ -48,7 +54,7 @@ const HeroSection = () => {
                 Luxury Jazz Fusion Experience
               </p>
 
-             <HeroLogo />
+              <HeroLogo />
 
             </div>
 
@@ -58,13 +64,15 @@ const HeroSection = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
 
-              <PrimaryButton>
-                Book Jazzmatazz
-              </PrimaryButton>
+              <div className="w-full sm:w-auto">
+                <PrimaryButton>
+                  Book Jazzmatazz
+                </PrimaryButton>
+              </div>
 
-              <button className="w-fit px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
+              <button className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
                 Explore Shows
               </button>
 
@@ -77,10 +85,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-            className="relative h-[600px] hidden lg:flex items-center justify-center"
+            className="relative flex items-center justify-center"
           >
 
-            {/* Main Visual Card */}
+            {/* Floating Animation */}
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{
@@ -88,32 +96,30 @@ const HeroSection = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
+              className="w-full flex justify-center"
             >
 
-              <GlassCard className="relative w-[380px] xl:w-[420px] h-[520px] overflow-hidden">
+              {/* Main Visual Card */}
+              <GlassCard className="relative w-[320px] sm:w-[380px] xl:w-[420px] h-[420px] sm:h-[500px] xl:h-[520px] overflow-hidden">
 
                 {/* Hero Image */}
                 <img
                   src={heroBand}
                   alt="Jazzmatazz Live Performance"
                   className="absolute inset-0 w-full h-full object-cover grayscale brightness-110 contrast-110"
-                    />
+                />
 
-                    {/* Dark Overlay */}
-                    <div className="absolute inset-0 bg-black/15" />
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/15" />
 
-                      {/* Gradient Atmosphere */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                {/* Gradient Atmosphere */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
 
-                      {/* Purple Ambient Glow */}
-                      <div className="absolute inset-0 bg-primary/10 mix-blend-screen" />
-                {/* Glow Layer */}
-                <div className="absolute inset-0 bg-black/20" />
+                {/* Purple Ambient Glow */}
+                <div className="absolute inset-0 bg-primary/10 mix-blend-screen" />
 
-            
-
-                {/* Placeholder Text */}
-                <div className="absolute bottom-10 left-10">
+                {/* Bottom Content */}
+                <div className="absolute bottom-8 md:bottom-10 left-8 md:left-10 z-10">
 
                   <p className="text-textSecondary uppercase tracking-[0.3em] text-xs mb-3">
                     National Level Band
@@ -128,12 +134,6 @@ const HeroSection = () => {
               </GlassCard>
 
             </motion.div>
-
-           
-
-            
-
-            
 
           </motion.div>
 

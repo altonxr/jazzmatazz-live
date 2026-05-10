@@ -25,8 +25,23 @@ const AboutPreview = () => {
           >
 
             {/* Main Card */}
-            <GlassCard className="relative h-[500px] md:h-[620px] overflow-hidden">
+            <GlassCard className="relative h-[420px] sm:h-[500px] md:h-[620px] overflow-hidden">
+{/* Musical Atmosphere */}
+<div className="absolute inset-0 overflow-hidden pointer-events-none">
 
+  <div className="absolute -top-10 -right-6 text-[180px] md:text-[260px] font-light text-white/[0.03] blur-[1px] rotate-12">
+    ♫
+  </div>
+
+  <div className="absolute bottom-10 left-[-20px] text-[120px] md:text-[180px] text-primary/10 rotate-[-12deg]">
+    ♬
+  </div>
+
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[220px] md:text-[320px] text-white/[0.02]">
+    ♪
+  </div>
+
+</div>
               {/* Background Visual */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-violetGlow/10" />
 
@@ -61,7 +76,7 @@ const AboutPreview = () => {
 
             </GlassCard>
 
-            {/* Floating Small Card */}
+            {/* Floating Card Desktop / Stacked Mobile */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{
@@ -69,10 +84,10 @@ const AboutPreview = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute -bottom-6 md:-bottom-10 right-0 md:-right-10"
+              className="relative md:absolute mt-6 md:mt-0 md:-bottom-10 md:-right-10"
             >
 
-              <GlassCard className="p-6 md:p-8 w-[220px] md:w-[240px]">
+              <GlassCard className="p-6 md:p-8 w-full md:w-[240px]">
 
                 <p className="uppercase tracking-[0.3em] text-xs text-textSecondary mb-4">
                   Established
