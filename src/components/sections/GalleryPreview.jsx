@@ -71,7 +71,7 @@ const GalleryPreview = () => {
                   />
 
                   {/* Dark Cinematic Overlay */}
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition duration-500" />
+                  <div className="absolute inset-0  group-hover:bg-black/15 transition duration-500" />
 
                   {/* Bottom Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-black/10 to-transparent" />
@@ -89,7 +89,7 @@ const GalleryPreview = () => {
                     <h3 className="font-heading text-2xl md:text-4xl font-bold leading-tight">
                       {item.title}
                     </h3>
-<div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
+
                   </div>
 
                 </GlassCard>
@@ -101,6 +101,7 @@ const GalleryPreview = () => {
         </motion.div>
 
       </Container>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
     </section>
   );
 };

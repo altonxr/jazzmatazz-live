@@ -1,8 +1,8 @@
-import Navbar from "../components/layout/Navbar";
+
 import Footer from "../components/layout/Footer";
 const MainLayout = ({ children }) => {
   return (
-    <div className="relative min-h-screen bg-background text-textPrimary overflow-hidden">
+    <div className="relative min-h-screen bg-background text-textPrimary overflow-x-hidden">
       {/* Noise Texture */}
         <div className="pointer-events-none fixed inset-0 opacity-[0.035] mix-blend-soft-light z-[1] bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
 
@@ -15,7 +15,7 @@ const MainLayout = ({ children }) => {
       {/* Ambient Glow Bottom Right */}
       <div className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] bg-violetGlow/20 blur-[180px] rounded-full pointer-events-none" />
 
-      <Navbar />
+      
 
       <main className="relative z-10">
         {children}

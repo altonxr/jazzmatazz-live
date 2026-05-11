@@ -67,7 +67,7 @@ const Footer = () => {
               href="#"
               className="hover:text-white transition duration-300"
             >
-              Gallery
+              Media
             </a>
 
             <a

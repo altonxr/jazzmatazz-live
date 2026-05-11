@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -8,7 +8,6 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Shows", path: "/shows" },
-  { name: "Gallery", path: "/gallery" },
   { name: "Members", path: "/members" },
   { name: "Media", path: "/media" },
   { name: "Booking", path: "/booking" },
@@ -16,78 +15,76 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 px-4 md:px-6 py-5">
+      {/* Navbar */}
+      <header className="fixed top-8 left-1/2 -translate-x-1/2 w-full z-[99999]">
 
-        <motion.nav
-          animate={{
-            backgroundColor: scrolled
-              ? "rgba(255,255,255,0.08)"
-              : "rgba(255,255,255,0.05)",
-            borderColor: scrolled
-              ? "rgba(255,255,255,0.12)"
-              : "rgba(255,255,255,0.08)",
-            y: scrolled ? -2 : 0,
-          }}
-          transition={{
-            duration: 0.4,
-            ease: "easeOut",
-          }}
-          className="max-w-container mx-auto backdrop-blur-2xl rounded-2xl px-6 md:px-8 py-4 flex items-center justify-between shadow-[0_0_40px_rgba(124,58,237,0.08)] border"
+        <nav
+          className="
+            relative
+            max-w-[1400px]
+            mx-auto
+            px-4 md:px-6
+            h-[76px]
+            flex items-center justify-between
+            rounded-[1.7rem]
+            border border-white/[0.06]
+            bg-[#070B17]/60
+            backdrop-blur-2xl
+            shadow-[0_0_25px_rgba(124,58,237,0.05)]
+          "
         >
 
+          {/* Glow */}
+          <div className="absolute inset-0 rounded-[1.7rem] bg-gradient-to-r from-primary/[0.04] via-transparent to-violetGlow/[0.04] pointer-events-none" />
+
           {/* Logo */}
-          <Logo />
+          <div className="relative z-10">
+            <Logo />
+          </div>
 
           {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8 relative z-10">
 
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative text-sm tracking-[0.15em] uppercase transition duration-300 ${
-                    isActive
-                      ? "text-white"
-                      : "text-textSecondary hover:text-white"
-                  }`
+                  `
+                    relative
+                    text-[13px]
+                    tracking-[0.18em]
+                    uppercase
+                    transition duration-300
+                    ${
+                      isActive
+                        ? "text-white"
+                        : "text-textSecondary hover:text-white"
+                    }
+                  `
                 }
               >
                 {({ isActive }) => (
-                  <div className="relative group">
+                  <div className="relative">
 
                     <span>{link.name}</span>
 
-                    {/* Hover / Active Line */}
+                    {/* Active Line */}
                     <motion.div
                       initial={false}
                       animate={{
                         width: isActive ? "100%" : "0%",
-                        opacity: isActive ? 1 : 0.6,
+                        opacity: isActive ? 1 : 0.7,
                       }}
                       whileHover={{
                         width: "100%",
                         opacity: 1,
                       }}
                       transition={{
-                        duration: 0.35,
-                        ease: "easeOut",
+                        duration: 0.25,
                       }}
                       className="absolute left-0 -bottom-2 h-px bg-gradient-to-r from-primary via-white to-violetGlow"
                     />
@@ -99,26 +96,21 @@ const Navbar = () => {
 
           </div>
 
-          {/* Desktop CTA */}
-          <button className="hidden lg:block px-5 py-2 rounded-xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow">
-            Book Jazzmatazz
-          </button>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(true)}
-            className="lg:hidden flex flex-col gap-1.5"
+            className="lg:hidden flex flex-col gap-1.5 relative z-10 mr-4"
           >
             <span className="w-6 h-[2px] bg-white rounded-full" />
             <span className="w-6 h-[2px] bg-white rounded-full" />
             <span className="w-6 h-[2px] bg-white rounded-full" />
           </button>
 
-        </motion.nav>
+        </nav>
 
       </header>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Menu */}
       <AnimatePresence>
 
         {isOpen && (
@@ -126,7 +118,8 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col"
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[100000] bg-background/95 backdrop-blur-3xl flex flex-col"
           >
 
             {/* Ambient Glow */}
@@ -152,8 +145,8 @@ const Navbar = () => {
 
             </div>
 
-            {/* Links */}
-            <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-10">
+            {/* Mobile Links */}
+            <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-8">
 
               {navLinks.map((link, index) => (
                 <motion.div
@@ -161,8 +154,8 @@ const Navbar = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: index * 0.08,
-                    duration: 0.5,
+                    delay: index * 0.07,
+                    duration: 0.45,
                   }}
                 >
 
@@ -176,10 +169,6 @@ const Navbar = () => {
 
                 </motion.div>
               ))}
-
-              <button className="mt-8 px-8 py-4 rounded-2xl bg-primary shadow-glow hover:bg-violetGlow transition duration-300">
-                Book Jazzmatazz
-              </button>
 
             </div>
 

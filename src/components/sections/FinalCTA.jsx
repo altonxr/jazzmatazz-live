@@ -5,7 +5,7 @@ import PrimaryButton from "../ui/PrimaryButton";
 
 const FinalCTA = () => {
   return (
-    <section className="relative py-28 md:py-44 overflow-hidden">
+    <section className="relative py-20 md:py-28 overflow-hidden">
 <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent pointer-events-none z-10" />
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0B1120] to-background" />
@@ -29,7 +29,7 @@ const FinalCTA = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-violetGlow/10" />
 
             {/* Content */}
-            <div className="relative z-10 max-w-4xl mx-auto space-y-8 md:space-y-10">
+            <div className="relative z-10 max-w-4xl mx-auto space-y-6 md:space-y-8">
 
               <div className="space-y-5 md:space-y-6">
 
@@ -61,7 +61,7 @@ const FinalCTA = () => {
                 <button className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
                   Explore Media
                 </button>
-<div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
+
               </div>
 
             </div>
