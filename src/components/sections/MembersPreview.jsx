@@ -8,37 +8,25 @@ import {
 import Container from "../common/Container";
 import SectionTitle from "../common/SectionTitle";
 import GlassCard from "../ui/GlassCard";
+import membersData from "../../data/membersData";
 
 import memberSax from "../../assets/images/members/members-sax.png";
 import memberFlute from "../../assets/images/members/members-flute.png";
 import memberDrums from "../../assets/images/members/members-drums.png";
 
-const members = [
-  {
-    id: 1,
-    name: "Swizel",
-    role: "Saxophone",
-    image: memberSax,
-    description:
-      "Blending expressive saxophone textures with immersive jazz fusion energy and cinematic live improvisation.",
-  },
-  {
-    id: 2,
-    name: "Clifton",
-    role: "Flute",
-    image: memberFlute,
-    description:
-      "Creating atmospheric melodic layers and emotional performance moments inspired by contemporary jazz expression.",
-  },
-  {
-    id: 3,
-    name: "Sreenath",
-    role: "Drums",
-    image: memberDrums,
-    description:
-      "Driving the rhythm section with dynamic percussion, live intensity, and modern fusion-inspired stage energy.",
-  },
-];
+const memberImages = {
+  1: memberSax,
+  2: memberFlute,
+  3: memberDrums,
+  4: memberDrums, // Default for additional members
+};
+
+const memberDescriptions = {
+  "Lead Saxophonist": "Blending expressive saxophone textures with immersive jazz fusion energy and cinematic live improvisation.",
+  "Fusion Pianist": "Creating atmospheric melodic layers and emotional performance moments inspired by contemporary jazz expression.",
+  "Bass & Rhythm": "Grounding the ensemble with rich bass lines and rhythmic complexity, driving the fusion experience forward.",
+  "Live Percussion": "Driving the rhythm section with dynamic percussion, live intensity, and modern fusion-inspired stage energy.",
+};
 
 const MembersPreview = () => {
   return (
@@ -65,7 +53,7 @@ const MembersPreview = () => {
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8"
         >
 
-          {members.map((member) => (
+          {membersData.map((member) => (
             <motion.div
               key={member.id}
               variants={fadeScale}
@@ -80,7 +68,7 @@ const MembersPreview = () => {
                 <div className="relative z-10 w-full h-[320px] overflow-hidden bg-black flex items-center justify-center">
 
                   <img
-                    src={member.image}
+                    src={memberImages[member.id]}
                     alt={member.name}
                     className="w-full h-full object-contain grayscale brightness-110 transition duration-700 group-hover:scale-105"
                   />
@@ -108,7 +96,7 @@ const MembersPreview = () => {
                   </h3>
 
                   <p className="text-textSecondary leading-relaxed text-sm md:text-base">
-                    {member.description}
+                    {memberDescriptions[member.role] || "A talented musician bringing their unique style to Jazzmatazz performances."}
                   </p>
 <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
                 </div>

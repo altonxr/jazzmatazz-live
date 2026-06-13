@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 import Container from "../common/Container";
 
@@ -47,70 +48,79 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-xs uppercase tracking-[0.3em] text-textSecondary">
+          <nav className="flex flex-wrap justify-center gap-6 md:gap-10 text-xs uppercase tracking-[0.3em] text-textSecondary">
 
-            <a
-              href="#"
-              className="hover:text-white transition duration-300"
+            <NavLink
+              to="/"
+              className={({ isActive }) => `transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1 ${isActive ? 'text-white' : 'hover:text-white'}`}
             >
               Home
-            </a>
+            </NavLink>
 
-            <a
-              href="#"
-              className="hover:text-white transition duration-300"
+            <NavLink
+              to="/shows"
+              className={({ isActive }) => `transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1 ${isActive ? 'text-white' : 'hover:text-white'}`}
             >
               Shows
-            </a>
+            </NavLink>
 
-            <a
-              href="#"
-              className="hover:text-white transition duration-300"
+            <NavLink
+              to="/media"
+              className={({ isActive }) => `transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1 ${isActive ? 'text-white' : 'hover:text-white'}`}
             >
               Media
-            </a>
+            </NavLink>
 
-            <a
-              href="#"
-              className="hover:text-white transition duration-300"
+            <NavLink
+              to="/members"
+              className={({ isActive }) => `transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1 ${isActive ? 'text-white' : 'hover:text-white'}`}
             >
               Members
-            </a>
+            </NavLink>
 
-            <a
-              href="#"
-              className="hover:text-white transition duration-300"
+            <NavLink
+              to="/booking"
+              className={({ isActive }) => `transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1 ${isActive ? 'text-white' : 'hover:text-white'}`}
             >
               Booking
-            </a>
+            </NavLink>
 
-          </div>
+          </nav>
 
           {/* Socials */}
-          <div className="flex items-center gap-8 text-textSecondary">
+          <nav className="flex items-center gap-8 text-textSecondary">
 
             <a
-              href="#"
-              className="hover:text-white transition duration-300"
+              href="https://instagram.com/jazzmatazz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-white transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1"
             >
               Instagram
             </a>
 
             <a
-              href="#"
-              className="hover:text-white transition duration-300"
+              href="https://youtube.com/jazzmatazz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="hover:text-white transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1"
             >
               YouTube
             </a>
 
             <a
-              href="#"
-              className="hover:text-white transition duration-300"
+              href="https://spotify.com/artist/jazzmatazz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Spotify"
+              className="hover:text-white transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1"
             >
               Spotify
             </a>
 
-          </div>
+          </nav>
 
           {/* Divider */}
           <div className="w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />

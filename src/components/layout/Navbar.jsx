@@ -59,6 +59,7 @@ const Navbar = () => {
                     tracking-[0.18em]
                     uppercase
                     transition duration-300
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-2 py-1
                     ${
                       isActive
                         ? "text-white"

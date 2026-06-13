@@ -12,22 +12,22 @@ const bookingDetails = [
   {
     title: "Festival Performances",
     description:
-      "[ Add details about festival appearances and large-scale live performances here ]",
+      "High-energy performances at music festivals, cultural events, and large-scale venues. We bring atmospheric jazz fusion to massive audiences with professional stage setup and immersive sound design.",
   },
   {
     title: "Private Experiences",
     description:
-      "[ Add details about curated private events, lounge experiences, and intimate gatherings here ]",
+      "Curated intimate performances for private events, lounge experiences, and exclusive gatherings. Perfect for corporate events, weddings, and special occasions seeking cinematic jazz ambiance.",
   },
   {
     title: "Collaborative Events",
     description:
-      "[ Add details about creative collaborations, special performances, and curated productions here ]",
+      "Creative collaborations with other artists, special theme performances, and curated musical productions. We adapt our sound to complement your vision and create unforgettable experiences.",
   },
   {
     title: "Response & Planning",
     description:
-      "[ Add response expectations, event planning notes, and booking communication details here ]",
+      "Quick response within 48 hours. Flexible event planning, technical requirements consultation, and customized setlists for your specific venue and audience. Let's create something extraordinary together.",
   },
 ];
 

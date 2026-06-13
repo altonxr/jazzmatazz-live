@@ -113,9 +113,9 @@ const BookingHero = () => {
                   </p>
 
                   <h3 className="font-heading text-3xl md:text-4xl leading-[1] font-bold">
-                    [ Add WhatsApp
+                    +91 99XX
                     <br />
-                    Number Here ]
+                    XXXX 69
                   </h3>
 
                 </div>

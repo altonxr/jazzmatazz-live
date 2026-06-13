@@ -109,7 +109,7 @@ const ShowsHero = () => {
                   </p>
 
                   <h3 className="font-heading text-3xl md:text-4xl leading-[1] font-bold">
-                    [ Venue Name ]
+                    The Blue Note Arena
                   </h3>
 
                 </div>
@@ -117,19 +117,19 @@ const ShowsHero = () => {
                 <div className="space-y-3 text-sm md:text-base text-textSecondary leading-relaxed">
 
                   <p>
-                    • Add show venue here
+                    📍 Mumbai, India
                   </p>
 
                   <p>
-                    • Add city & country here
+                    📅 May 24, 2026
                   </p>
 
                   <p>
-                    • Add show date here
+                    🎵 Featured Cinematic Jazz Performance
                   </p>
 
                   <p>
-                    • Add short atmosphere description here
+                    Immersive atmosphere with full production and stage energy
                   </p>
 
                 </div>

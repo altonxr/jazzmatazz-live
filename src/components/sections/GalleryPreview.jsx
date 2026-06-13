@@ -14,11 +14,15 @@ import galleryData from "../../data/galleryData";
 import gallery1 from "../../assets/images/gallery/gallery-1.png";
 import gallery2 from "../../assets/images/gallery/gallery-2.png";
 import gallery3 from "../../assets/images/gallery/gallery-3.png";
+import gallery4 from "../../assets/images/gallery/gallery-1.png";
+import gallery5 from "../../assets/images/gallery/gallery-2.png";
 
 const galleryImages = [
   gallery1,
   gallery2,
   gallery3,
+  gallery4,
+  gallery5,
 ];
 
 const GalleryPreview = () => {
@@ -46,7 +50,7 @@ const GalleryPreview = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[220px] md:auto-rows-[260px]"
         >
 
-          {galleryData.slice(0, 3).map((item, index) => {
+          {galleryData.map((item, index) => {
 
             const sizeClasses = {
               large: "lg:col-span-7 lg:row-span-2",

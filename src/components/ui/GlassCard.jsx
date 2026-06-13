@@ -6,6 +6,10 @@ const GlassCard = ({ children, className = "" }) => {
       whileHover={{
         y: -4,
       }}
+      whileTap={{
+        y: -2,
+        scale: 0.98,
+      }}
       transition={{
         duration: 0.45,
         ease: [0.22, 1, 0.36, 1],
@@ -26,12 +30,14 @@ const GlassCard = ({ children, className = "" }) => {
 
         group
 
+        active:brightness-110
+
         ${className}
       `}
     >
 
       {/* Ambient Hover Glow */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-gradient-to-br from-primary/[0.08] via-transparent to-violetGlow/[0.06]" />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 active:opacity-100 transition duration-700 bg-gradient-to-br from-primary/[0.08] via-transparent to-violetGlow/[0.06]" />
 
       {/* Subtle Top Highlight */}
       <div className="absolute top-0 left-0 w-full h-px bg-white/[0.08]" />
@@ -43,6 +49,7 @@ const GlassCard = ({ children, className = "" }) => {
       <motion.div
         initial={{ x: "-140%" }}
         whileHover={{ x: "140%" }}
+        whileTap={{ x: "140%" }}
         transition={{
           duration: 1.4,
           ease: "easeInOut",

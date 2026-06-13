@@ -6,30 +6,13 @@ import {
 } from "../../utils/animations";
 
 import Container from "../../components/common/Container";
+import showsData from "../../data/showsData";
 
-const shows = [
-  {
-    id: 1,
-    title: "[ Featured Show Title ]",
-    venue: "[ Venue Name ]",
-    date: "[ Show Date ]",
-    atmosphere: "[ Add immersive show atmosphere description here ]",
-  },
-  {
-    id: 2,
-    title: "[ Featured Show Title ]",
-    venue: "[ Venue Name ]",
-    date: "[ Show Date ]",
-    atmosphere: "[ Add immersive show atmosphere description here ]",
-  },
-  {
-    id: 3,
-    title: "[ Featured Show Title ]",
-    venue: "[ Venue Name ]",
-    date: "[ Show Date ]",
-    atmosphere: "[ Add immersive show atmosphere description here ]",
-  },
-];
+const atmosphereDescriptions = {
+  1: "Experience cinematic lighting, atmospheric soundscapes, and dynamic stage energy in an intimate setting.",
+  2: "Immersive festival vibes with full production, synchronized visuals, and unforgettable fusion energy.",
+  3: "Late-night sessions featuring experimental arrangements, collaborative improvisation, and midnight magic.",
+};
 
 const FeaturedShows = () => {
   return (
@@ -77,7 +60,7 @@ const FeaturedShows = () => {
           className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8"
         >
 
-          {shows.map((show) => (
+          {showsData.map((show) => (
             <motion.div
               key={show.id}
               variants={fadeScale}
@@ -110,18 +93,20 @@ const FeaturedShows = () => {
                   </p>
 
                   <h3 className="font-heading text-3xl leading-[1] font-bold mb-4">
-                    {show.title}
+                    {show.venue}
                   </h3>
 
                   <p className="text-sm text-textSecondary uppercase tracking-[0.2em]">
-                    {show.venue}
+                    {show.city}
                   </p>
 
                 </div>
 
-                <p className="text-sm md:text-base text-textSecondary leading-relaxed">
-                  {show.atmosphere}
-                </p>
+                <div className="text-sm md:text-base text-textSecondary leading-relaxed space-y-2">
+                  <p><span className="text-white/80">📅</span> {show.date}</p>
+                  <p><span className="text-white/80">🎵</span> {show.type}</p>
+                  <p>{atmosphereDescriptions[show.id]}</p>
+                </div>
 
                 {/* Bottom Accent */}
                 <div className="pt-5 border-t border-white/[0.06] flex items-center justify-between text-xs uppercase tracking-[0.25em] text-textMuted">

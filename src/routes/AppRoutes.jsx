@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-
+import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import Home from "../pages/Home";
@@ -8,6 +8,7 @@ import Shows from "../pages/Shows";
 import Members from "../pages/Members";
 import Media from "../pages/Media";
 import Booking from "../pages/Booking";
+import NotFound from "../pages/NotFound";
 
 const PageTransition = ({ children }) => {
   return (
@@ -39,6 +40,11 @@ const PageTransition = ({ children }) => {
 
 const AppRoutes = () => {
   const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <AnimatePresence mode="wait">
@@ -98,6 +104,16 @@ const AppRoutes = () => {
           element={
             <PageTransition>
               <Booking />
+            </PageTransition>
+          }
+        />
+
+        {/* 404 Not Found Route */}
+        <Route
+          path="*"
+          element={
+            <PageTransition>
+              <NotFound />
             </PageTransition>
           }
         />

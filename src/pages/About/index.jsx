@@ -1,4 +1,5 @@
 import MainLayout from "../../layouts/MainLayout";
+import usePageTitle from "../../hooks/usePageTitle";
 
 import PageHero from "../../components/common/PageHero";
 
@@ -6,6 +7,8 @@ import AboutPhilosophy from "./AboutPhilosophy";
 import AboutJourney from "./AboutJourney";
 import AboutEthos from "./AboutEthos";
 const About = () => {
+  usePageTitle("About", "Learn about Jazzmatazz - A cinematic jazz fusion collective built around atmosphere, emotional performance, and immersive live experiences.");
+
   return (
     <MainLayout>
 

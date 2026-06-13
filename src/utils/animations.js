@@ -1,7 +1,24 @@
+// Check if user prefers reduced motion
+const prefersReducedMotion = () => {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+};
+
+// Helper to create reduced motion variants
+const withReducedMotion = (animation) => {
+  if (prefersReducedMotion()) {
+    return {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { duration: 0.3 } },
+    };
+  }
+  return animation;
+};
+
 export const fadeUp = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: prefersReducedMotion() ? 0 : 50,
   },
 
   visible: {
@@ -9,7 +26,7 @@ export const fadeUp = {
     y: 0,
 
     transition: {
-      duration: 1,
+      duration: prefersReducedMotion() ? 0.3 : 1,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -18,7 +35,7 @@ export const fadeUp = {
 export const fadeDown = {
   hidden: {
     opacity: 0,
-    y: -50,
+    y: prefersReducedMotion() ? 0 : -50,
   },
 
   visible: {
@@ -26,7 +43,7 @@ export const fadeDown = {
     y: 0,
 
     transition: {
-      duration: 1,
+      duration: prefersReducedMotion() ? 0.3 : 1,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -35,7 +52,7 @@ export const fadeDown = {
 export const fadeLeft = {
   hidden: {
     opacity: 0,
-    x: -60,
+    x: prefersReducedMotion() ? 0 : -60,
   },
 
   visible: {
@@ -43,7 +60,7 @@ export const fadeLeft = {
     x: 0,
 
     transition: {
-      duration: 1,
+      duration: prefersReducedMotion() ? 0.3 : 1,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -52,7 +69,7 @@ export const fadeLeft = {
 export const fadeRight = {
   hidden: {
     opacity: 0,
-    x: 60,
+    x: prefersReducedMotion() ? 0 : 60,
   },
 
   visible: {
@@ -60,7 +77,7 @@ export const fadeRight = {
     x: 0,
 
     transition: {
-      duration: 1,
+      duration: prefersReducedMotion() ? 0.3 : 1,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -69,7 +86,7 @@ export const fadeRight = {
 export const fadeScale = {
   hidden: {
     opacity: 0,
-    scale: 0.94,
+    scale: prefersReducedMotion() ? 1 : 0.94,
   },
 
   visible: {
@@ -77,7 +94,7 @@ export const fadeScale = {
     scale: 1,
 
     transition: {
-      duration: 1,
+      duration: prefersReducedMotion() ? 0.3 : 1,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -88,8 +105,8 @@ export const staggerContainer = {
 
   visible: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.08,
+      staggerChildren: prefersReducedMotion() ? 0 : 0.12,
+      delayChildren: prefersReducedMotion() ? 0 : 0.08,
     },
   },
 };
@@ -97,8 +114,8 @@ export const staggerContainer = {
 export const cinematicReveal = {
   hidden: {
     opacity: 0,
-    filter: "blur(12px)",
-    y: 40,
+    filter: prefersReducedMotion() ? "blur(0px)" : "blur(12px)",
+    y: prefersReducedMotion() ? 0 : 40,
   },
 
   visible: {
@@ -107,14 +124,14 @@ export const cinematicReveal = {
     y: 0,
 
     transition: {
-      duration: 1.2,
+      duration: prefersReducedMotion() ? 0.3 : 1.2,
       ease: [0.22, 1, 0.36, 1],
     },
   },
 };
 
 export const slowFloat = {
-  animate: {
+  animate: prefersReducedMotion() ? {} : {
     y: [0, -10, 0],
 
     transition: {
@@ -126,7 +143,7 @@ export const slowFloat = {
 };
 
 export const subtleRotate = {
-  animate: {
+  animate: prefersReducedMotion() ? {} : {
     rotate: [0, 3, 0],
 
     transition: {
