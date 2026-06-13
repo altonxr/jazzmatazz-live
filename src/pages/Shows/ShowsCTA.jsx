@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import {
   cinematicReveal,
@@ -73,13 +74,19 @@ const ShowsCTA = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 pt-4">
 
-            <button className="px-8 py-4 rounded-2xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow text-sm uppercase tracking-[0.2em]">
-              Book The Experience
-            </button>
+            <Link to="/booking">
+              <button className="px-8 py-4 rounded-2xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow text-sm uppercase tracking-[0.2em] relative group overflow-hidden">
+                <span className="relative z-10">Book The Experience</span>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              </button>
+            </Link>
 
-            <button className="px-8 py-4 rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.06] transition duration-300 text-sm uppercase tracking-[0.2em]">
-              Explore Media
-            </button>
+            <Link to="/media" className="inline-block">
+              <button className="px-8 py-4 rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.06] transition duration-300 text-sm uppercase tracking-[0.2em] relative group overflow-hidden">
+                <span className="relative z-10">Explore Media</span>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              </button>
+            </Link>
 
           </div>
 

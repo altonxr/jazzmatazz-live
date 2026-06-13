@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   fadeLeft,
   fadeRight,
@@ -71,15 +72,18 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-5">
 
-              <div className="w-full sm:w-auto">
+              <Link to="/booking" className="w-full sm:w-auto">
                 <PrimaryButton>
                   Book Jazzmatazz
                 </PrimaryButton>
-              </div>
+              </Link>
 
-              <button className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
-                Explore Shows
-              </button>
+              <Link to="/shows" className="w-full sm:w-auto inline-block">
+                <button className="w-full px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300 relative group overflow-hidden">
+                  <span className="relative z-10">Explore Shows</span>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                </button>
+              </Link>
 
             </div>
 

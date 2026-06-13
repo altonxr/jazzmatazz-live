@@ -7,6 +7,10 @@ import {
 
 import Container from "../../components/common/Container";
 
+const whatsappNumber = "919999699999"; // Replace with actual number
+const whatsappMessage = encodeURIComponent("Hi Jazzmatazz! I'm interested in booking a performance for my event.");
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
 const BookingHero = () => {
   return (
     <section className="relative overflow-hidden pt-28 md:pt-40 pb-12 md:pb-20">
@@ -143,9 +147,16 @@ const BookingHero = () => {
                 {/* WhatsApp Button */}
                 <div className="pt-4">
 
-                  <button className="w-full px-6 py-4 rounded-2xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow text-sm uppercase tracking-[0.2em]">
-                    Message On WhatsApp
-                  </button>
+                  <a 
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="w-full px-6 py-4 rounded-2xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow text-sm uppercase tracking-[0.2em] relative group overflow-hidden">
+                      <span className="relative z-10">Message On WhatsApp</span>
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                    </button>
+                  </a>
 
                 </div>
 

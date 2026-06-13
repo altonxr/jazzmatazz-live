@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import Container from "../common/Container";
 import SectionTitle from "../common/SectionTitle";
@@ -78,9 +79,12 @@ const FeaturedShows = () => {
 
                 </div>
 
-                <button className="w-fit px-6 py-3 rounded-xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow">
-                  Explore Event
-                </button>
+                <Link to="/shows" className="w-fit block">
+                  <button className="px-6 py-3 rounded-xl bg-primary hover:bg-violetGlow transition duration-300 shadow-glow relative group overflow-hidden">
+                    <span className="relative z-10">Explore Event</span>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  </button>
+                </Link>
 
               </div>
 

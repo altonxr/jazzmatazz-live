@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import Container from "../common/Container";
 import PrimaryButton from "../ui/PrimaryButton";
@@ -54,13 +55,18 @@ const FinalCTA = () => {
 
               <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-5 md:gap-6">
 
-                <PrimaryButton>
-                  Book Jazzmatazz
-                </PrimaryButton>
+                <Link to="/booking">
+                  <PrimaryButton>
+                    Book Jazzmatazz
+                  </PrimaryButton>
+                </Link>
 
-                <button className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300">
-                  Explore Media
-                </button>
+                <Link to="/media" className="inline-block">
+                  <button className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition duration-300 relative group overflow-hidden">
+                    <span className="relative z-10">Explore Media</span>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  </button>
+                </Link>
 
               </div>
 
